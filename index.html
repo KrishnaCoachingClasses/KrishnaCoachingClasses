@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Coaching Classes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #0bffe7;
+            padding: 15px;
+            text-align: center;
+            color: rgb(0, 0, 0);
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #660707;
+        }
+
+        nav ul li {
+            padding: 10px 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero {
+            background-image: url('https://source.unsplash.com/1600x900/?students,learning');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            position: relative;
+            color: white;
+        }
+
+        .hero .overlay {
+            background-color: rgb(35, 1, 43);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cta-btn {
+            background-color: #f04f24;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .cta-btn:hover {
+            background-color: #ff7043;
+        }
+
+        .courses {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .courses h2 {
+            margin-bottom: 20px;
+        }
+
+        .course-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .course-card {
+            border: 3px solid #08fbff;
+            padding: 20px;
+            width: 300px;
+            border-radius: 8px;
+        }
+
+        .course-card h3 {
+            margin-top: 0;
+        }
+
+        .testimonials {
+            background-color: #d5c140;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            margin-bottom: 20px;
+        }
+
+        .testimonial-item {
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+        }
+
+        .testimonial-item .student-name {
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #04575d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #f04f24;
+            text-decoration: none;
+        }
+        .about-section {
+        background-color: #2e0a0a;
+        padding: 50px 20px;
+        text-align: center;
+         }   
+
+        .about-section .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        }
+
+        .about-section h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #4CAF50;
+        }
+
+        .about-content p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #ffffff;
+         }
+
+        .about-content strong {
+        color: #f04f24;
+         }
+
+        .about-content ul {
+        list-style-type: none;
+        padding: 0;
+        font-size: 18px;
+        color: #ffffff;
+         }
+
+        .about-content ul li {
+        margin-bottom: 10px;
+         }
+
+        .about-content ul li strong {
+        color: #4CAF50;
+         }
+         .experts-section {
+        background-color: #f0f0f0;
+        padding: 60px 20px;
+        text-align: center;
+        }
+
+        .experts-section .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        }
+
+        .experts-section h2 {
+        font-size: 32px;
+        color: #4CAF50;
+        margin-bottom: 40px;
+        }
+
+        .experts-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        }
+
+        .expert-card {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 300px;
+        text-align: left;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        }
+
+        .expert-card:hover {
+        transform: translateY(-10px);
+        }
+
+        .expert-photo {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        }
+
+        .expert-info {
+        padding: 20px;
+        }
+
+        .expert-info h3 {
+        margin-top: 0;
+        color: #4CAF50;
+        }
+
+        .expert-info p {
+        margin: 10px 0;
+        color: #555;
+        font-size: 16px;
+        }
+
+        .expert-info strong {
+        color: #f04f24;
+        }
+        .classes-section {
+        background-color: #f9f9f9;
+        padding: 60px 20px;
+        text-align: center;
+        }
+
+        .classes-section .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        }
+
+        .classes-section h2 {
+        font-size: 32px;
+        color: #4CAF50;
+        margin-bottom: 40px;
+        }
+
+        .class-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        }
+
+        .class-card:hover {
+        transform: translateY(-10px);
+        }
+
+        .class-info {
+        text-align: left;
+        flex-basis: 60%;
+        }
+
+        .class-info h3 {
+        color: #f04f24;
+        font-size: 28px;
+        margin-bottom: 15px;
+        }
+
+        .class-info p {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+        }
+
+        .class-img {
+        flex-basis: 35%;
+        text-align: right;
+        }
+
+        .class-img img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Krishna Coaching Classes</h1>
+        <p>Unlock Your Full Potential with Expert Guidance</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#experts">Expert</a></li>
+            <li><a href="#classes">Classes</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="overlay">
+            <h2>Achieve Your Academic Dreams 6 to 10th class</h2>
+            <p>With Professional Coaching at Krishna Classes</p>
+            <a href="#courses" class="cta-btn">Explore Courses</a>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <h2>Our Popular Courses Between 6 to 10th Classes</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <h3>Mathematics 6 to 10th</h3>
+                <p>Master mathematics from basics to advanced concepts with experienced tutors.</p>
+            </div>
+            <div class="course-card">
+                <h3>Science 6 to 10th</h3>
+                <p>Comprehensive lessons covering Physics, Chemistry, and Biology.</p>
+            </div>
+            <div class="course-card">
+                <h3>English with Grammer 6 to 10th</h3>
+                <p>Enhance your language skills with our English courses.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Explore Our Classes Section -->
+<section id="classes" class="classes-section">
+    <div class="container">
+        <h2>Explore Our Online and Offline Classes</h2>
+        
+        <!-- Offline Class Card -->
+        <div class="class-card">
+            <div class="class-info">
+                <h3>Offline Class</h3>
+                <p><strong>Location:</strong> Sri Ram Chaurasiya Public School, Rukunpur, Kasimpur (Kerbla), Ambedker Nagar</p>
+                <p><strong>Timing:</strong> Morning and Evening Sessions</p>
+                <p><strong>Why Choose Offline?</strong> Experience face-to-face learning with expert tutors in a classroom environment. Engage with peers and receive personalized support.</p>
+            </div>
+            <div class="class-img">
+                <img src="blog-26-classroom-management copy.jpg" alt="Offline Class Image">
+            </div>
+        </div>
+
+        <!-- Online Class Card -->
+        <div class="class-card">
+            <div class="class-info">
+                <h3>Online Class</h3>
+                <p><strong>Platform:</strong> Zoom Meeting (Online App)</p>
+                <p><strong>Timing:</strong> Evening Sessions</p>
+                <p><strong>Duration:</strong> 40 minutes per session</p>
+                <p><strong>Why Choose Online?</strong> Enjoy the flexibility of learning from home. Our online sessions are interactive, allowing you to ask questions in real-time and access study materials instantly.</p>
+            </div>
+            <div class="class-img">
+                <img src="zoom-mobile-1 copy.png" alt="Online Class Image">
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- About Us Section -->
+<section id="about" class="about-section">
+    <div class="container">
+        <h2>About Krishna Coaching Classes</h2>
+        <div class="about-content">
+            <p>
+                At <strong>Krishna Coaching Classes</strong>, we believe that every student has the potential to achieve greatness. Founded with the vision to provide quality education and personalized guidance, we have been helping students excel in academics for over a decade.
+            </p>
+            <p>
+                Our expert faculty specializes in a wide range of subjects, offering comprehensive courses in Mathematics, Science, English, and more. Whether you are preparing for board exams, competitive exams, or simply want to improve your subject knowledge, Krishna Classes is your trusted partner in success.
+            </p>
+            <p>
+                <strong>Why Choose Us?</strong>
+                <ul>
+                    <li><strong>Experienced Tutors:</strong> Our teachers are industry experts with years of teaching experience.</li>
+                    <li><strong>Personalized Learning:</strong> We offer one-on-one sessions to address individual student needs.</li>
+                    <li><strong>Proven Results:</strong> Hundreds of our students have aced their exams and gone on to prestigious institutions.</li>
+                    <li><strong>Flexible Learning:</strong> Online and offline classes tailored to fit your schedule.</li>
+                </ul>
+            </p>
+            <p>
+                Join us at Krishna Coaching Classes and unlock your full potential!
+            </p>
+        </div>
+    </div>
+</section>
+<!-- Meet Our Experts Section -->
+<section id="experts" class="experts-section">
+    <div class="container">
+        <h2>Meet Our Expert Tutors</h2>
+        <div class="experts-grid">
+            <!-- Expert 1 -->
+            <div class="expert-card">
+                <img src="WhatsApp Image 2024-10-06 at 10.30.43-2 copy.jpeg" alt="Expert 1 Photo" class="expert-photo">
+                <div class="expert-info">
+                    <h3>MR. Ravi Kumar</h3>
+                    <p><strong>Mathematics,Physics Expert</strong></p>
+                    <p>With over 5 years of experience,specializes in helping students grasp complex mathematical & Physics concepts with ease. His methods are highly effective for competitive exams.</p>
+                </div>
+            </div>
+            
+            <!-- Expert 2 -->
+            <div class="expert-card">
+                <img src="WhatsApp Image 2024-10-06 at 10.30.43 copy.jpeg" alt="Expert 2 Photo" class="expert-photo">
+                <div class="expert-info">
+                    <h3>MR. Sachin Kumar</h3>
+                    <p><strong>History & Geography</strong></p>
+                    <p>MR. Sachin Kumar, with History & Geography, has been teaching students to excel in History & Geography, He  is known for the depth knowledge and practical teaching methods.</p>
+                </div>
+            </div>
+            
+            <!-- Expert 3 -->
+            <div class="expert-card">
+                <img src="WhatsApp Image 2024-10-06 at 10.30.42 copy.jpeg" alt="Expert 3 Photo" class="expert-photo">
+                <div class="expert-info">
+                    <h3>Ms. Sanjuli Patel</h3>
+                    <p><strong>Biology</strong></p>
+                    <p>Ms. Sanjuli has helped hundreds+ of students . Her approach focuses on BioLogical Main Strength & preparing students for academic and professional success.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Students Say</h2>
+        <div class="testimonial-item">
+            <p>"Krishna Classes helped me excel in my board exams. The teachers are truly experts."</p>
+            <span class="student-name">- Anjali S.</span>
+        </div>
+        <div class="testimonial-item">
+            <p>"The personal attention I received here really boosted my confidence."</p>
+            <span class="student-name">- Rahul K.</span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer id="contact">
+        <h3>Contact Us</h3>
+        <p>Email: contact@krishnaclasses.com | Phone: 123-456-7890</p>
+        <p>Follow us on <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+        <p>&copy; 2024 Krishna Coaching Classes. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
